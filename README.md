@@ -34,6 +34,7 @@ Text captcha made for fun, still need some work to be good
 
 ### 🔥 Features
 
+- defeats google vision ai
 - random noise (points, lines)
 - wave distortion
 - random blurs
