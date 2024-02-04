@@ -116,26 +116,26 @@ def gen_weird_char(s: str, size: int) -> Image:
 
 
 def encode(image, data) -> Image:
-    encoded = image.copy()
+    e = image.copy()
     width, height = image.size
 
-    binary_data = ''.join(format(ord(c), '08b') for c in data)
+    b_data = ''.join(format(ord(c), '08b') for c in data)
 
-    if len(binary_data) > width * height:
+    if len(b_data) > width * height:
         raise ValueError("Data is too large to be encoded in this image.")
 
     d_index = 0
     for row in range(height):
         for col in range(width):
-            if d_index < len(binary_data):
-                pixel = list(encoded.getpixel((col, row)))
-                pixel[0] = pixel[0] & ~1 | int(binary_data[d_index])
-                encoded.putpixel((col, row), tuple(pixel))
+            if d_index < len(b_data):
+                pixel = list(e.getpixel((col, row)))
+                pixel[0] = pixel[0] & ~1 | int(b_data[d_index])
+                e.putpixel((col, row), tuple(pixel))
                 d_index += 1
             else:
                 break
 
-    return encoded
+    return e
 
 
 def generate(n) -> list[Image, str]:
