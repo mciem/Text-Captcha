@@ -26,6 +26,12 @@
 
 ---
 
+### 📝 Description
+
+Text captcha made for fun, still need some work to be good
+
+---
+
 ### 🔥 Features
 
 - random noise (points, lines)
